@@ -33,7 +33,7 @@ class vid:
         numClips = int(self.audioLength/LEN_CLIPS)
         endLoop = numClips*LEN_CLIPS
         excess = self.audioLength-(numClips*LEN_CLIPS)
-        wpc = int(self.wmp/2)
+        wpc = int(self.wmp/(60/LEN_CLIPS))
         f = open('posts.txt','r')
         script=[word for line in f for word in line.split()]
         f.close()
