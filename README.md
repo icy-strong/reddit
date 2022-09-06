@@ -1,5 +1,5 @@
 # Reddit Video Generator
-## Description
+###Description
 Have you ever seen videos of a still image, overlayed with a robot voice reading content farmed from a public form, and thought "wow, this is such easy content! Anyone could do it"?
 
 Well now, even a robot can!
