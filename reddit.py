@@ -77,7 +77,7 @@ f.close()
 
 
 
-videoGen = vid(210)
+videoGen = vid(210, 'stock.jpg')
 
 videoGen.makeClips()
 videoGen.group()

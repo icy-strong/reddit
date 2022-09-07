@@ -8,10 +8,10 @@ import os
 #generates a video based off still image and audio, with subtitles
 class vid:
     #make audio length in seconds
-    def __init__(self, wpm, imgs = ['stock.jpg']):
+    def __init__(self, wpm, imgFile):
         self.audioLength = None
         self.v = None
-        self.imgs = imgs
+        self.imgs = imgFile
         self.imageClip = image_clip = mp.ImageClip('stock.jpg')
         self.wmp = wpm
         self.clips=[]
@@ -20,7 +20,7 @@ class vid:
 
 
     #makes the clips in sections of how many words the user wants per clip of video
-    def makeClips(self, wpc=None):
+    def makeClips(self, wpc=None, font_size=25, font_color='white', font = "Courier"):
         if wpc == None:
             wpc = self.wmp//2
 
@@ -71,7 +71,7 @@ class vid:
             clip = self.imageClip.set_audio(audio_clip)
 
             
-            txt = mp.TextClip(subScr, color = 'white', fontsize = 25)
+            txt = mp.TextClip(subScr, color = font_color, fontsize = font_size, font=font )
             txt = txt.set_position('center')
             finalC = mp.CompositeVideoClip([clip,txt])
             finalC.duration= audio_clip.duration
@@ -98,7 +98,7 @@ class vid:
         clip = self.imageClip.set_audio(audio_clip)
         
 
-        txt = mp.TextClip(subScr, color = 'white', fontsize=25 )
+        txt = mp.TextClip(subScr, color = font_color, fontsize=font_size, font = font )
         txt = txt.set_position('center')
         finalC = mp.CompositeVideoClip([clip,txt])
         finalC.duration = audio_clip.duration
