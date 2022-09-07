@@ -6,7 +6,5 @@ Well now, even a robot can!
 
 This program uses the praw api to get reddit posts, then uses the python tts library to read it out loud over a still image with the text overlayed.
 
-### Known Issues
-Currently, the program uses the average wpm of the tts audio, and generates a list of clips of user provided length. It decides how many words to put on each clip from the wpm and length of clips, but because the wpm isn't consitant, the video ends up being slightly behind, and this problem compounds over time.
-
-I will fix this by instead generating the audio clips based off a fixed number of words, and make the clips however long the generated audio for it is. This is somewhat worrying because I fear it will greatly increase the runtime of the program.
+### Update!
+The original version of this program is still avalible in another branch, but now instead of generating one big video, it is generated in sections as to keep the text and audio in sync. This hurts the runtime, but at this time I do not think there is a faster way to do it that is still reliable.
