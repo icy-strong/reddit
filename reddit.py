@@ -75,24 +75,10 @@ f.write(testts)
 f.close()
 
 
-#intitalizes the voice robot and has it read the posts
-engine=ptts.init()
-voices=engine.getProperty('voices')
-rate=engine.getProperty('rate')
-#engine.setProperty('rate', rate-50)
-engine.save_to_file(testts, 'audio.mp3')
-engine.runAndWait()
-
-print('audio made')
 
 
+videoGen = vid(210)
 
-
-
-
-videoGen = vid(rate)
-
-videoGen.genV()
 videoGen.makeClips()
 videoGen.group()
 
